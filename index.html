@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord-style Posts</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-comment-dots"></i> Discord Posts</h1>
+            <button id="newPostBtn" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Новый пост
+            </button>
+        </header>
+
+        <div class="posts-container" id="postsContainer">
+            <!-- Посты будут загружаться здесь -->
+        </div>
+
+        <!-- Модальное окно для нового поста -->
+        <div id="postModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Создать новый пост</h2>
+                <form id="postForm">
+                    <div class="form-group">
+                        <label for="postTitle">Название:</label>
+                        <input type="text" id="postTitle" required class="input-field">
+                    </div>
+                    <div class="form-group">
+                        <label for="postImage">Изображение (URL):</label>
+                        <input type="text" id="postImage" class="input-field" placeholder="https://example.com/image.jpg">
+                    </div>
+                    <div class="form-group">
+                        <label for="postText">Текст:</label>
+                        <textarea id="postText" rows="4" required class="input-field"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="postFile">Файл (URL, опционально):</label>
+                        <input type="text" id="postFile" class="input-field" placeholder="https://example.com/file.pdf">
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Опубликовать
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+    
+    <!-- Основной скрипт -->
+    <script src="script.js"></script>
+</body>
+</html>
